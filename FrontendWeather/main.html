@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Main Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arima:wght@553&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <input type="text" id="searchBar" placeholder="Change City" list="cities" />
+            <datalist id="cities">
+                <option value="Delhi"></option>
+                <option value="Jaipur"></option>
+                <option value="Agra"></option>
+                <option value="Varanasi"></option>
+                <option value="Dehradun"></option>
+                <option value="Chandigarh"></option>
+                <option value="Mumbai"></option>
+                <option value="Pune"></option>
+                <option value="Ahmedabad"></option>
+                <option value="Surat"></option>
+                <option value="Nagpur"></option>
+                <option value="Bangalore"></option>
+                <option value="Chennai"></option>
+                <option value="Hyderabad"></option>
+                <option value="Coimbatore"></option>
+                <option value="Thiruvananthapuram"></option>
+                <option value="Kolkata"></option>
+                <option value="Bhubaneswar"></option>
+                <option value="Guwahati"></option>
+                <option value="Patna"></option>
+                <option value="Durgapur"></option>
+                <option value="Bhopal"></option>
+                <option value="Indore"></option>
+                <option value="Shillong"></option>
+                <option value="Imphal"></option>
+                <option value="Agartala"></option>
+                <option value="Aizawl"></option>
+                <option value="Srinagar"></option>
+                <option value="Leh"></option>
+                <option value="Puducherry"></option>
+                <option value="Mysuru"></option>
+                <option value="Vadodara"></option>
+                <option value="Jodhpur"></option>
+                <option value="Nashik"></option>
+            </datalist>
+            <button onclick="fetchWeatherData()">Search</button>
+            <button data-toggle="modal" data-target="#alertModal">Set Alert</button>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>Live Weather Updates & Forecasting</h1>
+        <!-- Left Container for Current Weather -->
+        <div class="left-container">
+            <h2>Current Weather</h2>
+            <br>
+            <p><strong>City:</strong> <span id="currentCity"></span></p>
+            <p><strong>Date:</strong> <span id="currentDateTime"></span></p>
+            <p><strong>Current Temperature:</strong> <span id="currentTemp"></span> °C</p>
+            <p><strong>Feels Like:</strong> <span id="feelsLike"></span> °C</p>
+            <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+            <p><strong>Dominant Weather:</strong> <span id="dominantWeather"></span></p>
+            <br>
+            <img id="weatherImage" src="" alt="Weather Image" style="display: block; margin: 0 auto; width: 100%; max-width: 150px;" />
+        </div>
+
+        <!-- Right Container for Weather Summary -->
+        <div class="right-container">
+            <h2>Weather Summary</h2>
+            <br>
+            <p><strong>Max Temperature:</strong> <span id="maxTemp"></span> °C</p>
+            <p><strong>Min Temperature:</strong> <span id="minTemp"></span> °C</p>
+            <p><strong>Average Temperature:</strong> <span id="avgTemp"></span> °C</p>
+            <br>
+        </div>
+    </div>
+
+    <div class="container forecast-container"> 
+        <h1>Weather Forecast</h1>
+        <div class="row">
+            <!-- Each box takes up 1/5 of the row, with increased size and padding -->
+            <div class="col-lg-2 col-md-4 mb-4 forecast-box">
+                <h3>Day 1</h3>
+                <p>Weather: <span id="weather1"></span></p>
+                <p>Min Temp: <span id="minTemp1"></span> °C</p>
+                <p>Max Temp: <span id="maxTemp1"></span> °C</p>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 forecast-box">
+                <h3>Day 2</h3>
+                <p>Weather: <span id="weather2"></span></p>
+                <p>Min Temp: <span id="minTemp2"></span> °C</p>
+                <p>Max Temp: <span id="maxTemp2"></span> °C</p>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 forecast-box">
+                <h3>Day 3</h3>
+                <p>Weather: <span id="weather3"></span></p>
+                <p>Min Temp: <span id="minTemp3"></span> °C</p>
+                <p>Max Temp: <span id="maxTemp3"></span> °C</p>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 forecast-box">
+                <h3>Day 4</h3>
+                <p>Weather: <span id="weather4"></span></p>
+                <p>Min Temp: <span id="minTemp4"></span> °C</p>
+                <p>Max Temp: <span id="maxTemp4"></span> °C</p>
+            </div>
+            <div class="col-lg-2 col-md-4 mb-4 forecast-box">
+                <h3>Day 5</h3>
+                <p>Weather: <span id="weather5"></span></p>
+                <p>Min Temp: <span id="minTemp5"></span> °C</p>
+                <p>Max Temp: <span id="maxTemp5"></span> °C</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div class="modal fade" id="alertModal" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="alertModalLabel">Set Weather Alert</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="alertCity" class="form-control" placeholder="City" />
+                    <input type="email" id="alertEmail" class="form-control" placeholder="Email" />
+                    <input type="number" id="alertThreshold" class="form-control" placeholder="Temperature Threshold" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="setWeatherAlert()">Save Alert</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+

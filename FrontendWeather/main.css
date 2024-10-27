@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arima', serif;
+    background: url('https://img.freepik.com/free-vector/gorgeous-clouds-background-with-blue-sky-design_1017-25501.jpg?semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.navbar {
+    background-color: #0099cc; /* Navbar background color */
+    padding: 15px; /* Spacing around the navbar */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-container input {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 20px; 
+    outline: none;
+}
+
+.nav-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0077aa;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.nav-container button:hover {
+    background-color: #005f8f;
+}
+
+.container {
+    display: flex; /* Display the containers in a row */
+    flex-direction: column; /* Column layout for heading and containers */
+    align-items: center; /* Center-align items */
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px; /* Add margin to separate from navbar */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px; /* Spacing between heading and containers */
+}
+
+.left-container, .right-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for containers */
+    padding: 20px;
+    margin: 10px; /* Margin between containers */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 800px; /* Maximum width for containers */
+    border-radius: 10px;
+    display: flex; /* Flex to center items inside containers */
+    flex-direction: column;
+     /* Stack items vertically inside containers */
+}
+.left-container, .right-container {
+    flex: 1; /* Allow both containers to grow equally */
+}
+
+.right-container {
+    margin-left: 20px; /* Space between left and right containers */
+}
+
+
+#weatherImage {
+    width: 100%; /* Full width within the container */
+    max-width: 1500px; /* Maximum width of the image */
+    height: auto; 
+    margin-left: 50%;/* Maintain aspect ratio */
+}
+
+#alertForm {
+    margin: 20px; /* Add some spacing */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    color: #ffffff; /* Text color */
+}
+.forecast-container {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.forecast-box {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgba(0, 79, 188, 0.7);
+    margin-bottom: 15px;
+    margin-left: 30px; /* Add space between boxes */
+}
+

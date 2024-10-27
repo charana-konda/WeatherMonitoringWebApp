@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arima:wght@553&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Know Before You Go</h1>
+        <p class="subheading">Check the weather in your city and plan your day!</p>
+        
+        <div class="autocomplete">
+            <input list="cities" id="cityInput" placeholder="Enter City" />
+            <datalist id="cities">
+                <option value="Delhi">
+                <option value="Jaipur">
+                <option value="Agra">
+                <option value="Varanasi">
+                <option value="Dehradun">
+                <option value="Chandigarh">
+                <option value="Mumbai">
+                <option value="Pune">
+                <option value="Ahmedabad">
+                <option value="Surat">
+                <option value="Nagpur">
+                <option value="Bangalore">
+                <option value="Chennai">
+                <option value="Hyderabad">
+                <option value="Coimbatore">
+                <option value="Thiruvananthapuram">
+                <option value="Kolkata">
+                <option value="Bhubaneswar">
+                <option value="Guwahati">
+                <option value="Patna">
+                <option value="Durgapur">
+                <option value="Bhopal">
+                <option value="Indore">
+                <option value="Shillong">
+                <option value="Imphal">
+                <option value="Agartala">
+                <option value="Aizawl">
+                <option value="Srinagar">
+                <option value="Leh">
+                <option value="Puducherry">
+                <option value="Mysuru">
+                <option value="Vadodara">
+                <option value="Jodhpur">
+                <option value="Nashik">
+            </datalist>
+        </div>
+        <button onclick="redirectToMainPage()">Check Weather</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
