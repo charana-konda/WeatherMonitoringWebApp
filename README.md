@@ -24,6 +24,9 @@ The project consists of these core components:
     - `current_summary` (updated every 5 minutes with real-time weather data)
 - **Language:** Java 17
 
+## Working Model Demo
+https://drive.google.com/file/d/1Ss6HDhyh8h7BVFwe05Zh_KL7MbL-Lqx4/view?usp=sharing
+
 ## Setup and Installation
 
 ### Backend Setup (Spring Boot)
@@ -83,7 +86,7 @@ The project consists of these core components:
      - Method: GET
      - URL: `http://localhost:8080/api/weather/current?city={city_name}` (replace `{city_name}` with the desired city)
 
-   - **Get Current Weather:**
+   - **Get Forecast Weather:**
      - Method: GET
      - URL: `http://localhost:8084/api/weather/forecast?city={city_name}` (replace `{city_name}` with the desired city)
 
